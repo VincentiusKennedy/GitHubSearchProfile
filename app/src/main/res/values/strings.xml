@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">GitHub Search Profile</string>
+    <string name="nama_user">Nama User</string>
+    <string name="search_user">Search Other Users</string>
+    <string name="searchbar_hint">Search GitHub Users</string>
+    <string name="tab_follower">Followers</string>
+    <string name="tab_following">Following</string>
+    <string name="name">Name</string>
+    <string name="login">Login</string>
+    <string name="location">Location</string>
+    <string name="following">Following</string>
+    <string name="_0">0</string>
+    <string name="followers">Followers</string>
+    <string name="repositories">Repositories</string>
+</resources>
