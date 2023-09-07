@@ -67,7 +67,7 @@ class MainActivity : AppCompatActivity() {
         val userAdapter = UserAdapter(userList)
         binding.rvUser.adapter = userAdapter
 
-        userAdapter.setOnUserItemClickListener(object : UserAdapter.OnUserItemClickListener{
+        userAdapter.setOnUserItemClickListener(object : UserAdapter.OnUserItemClickListener {
             override fun onUserItemClick(username: String) {
                 val intent = Intent(this@MainActivity, DetailUserActivity::class.java)
                 intent.putExtra("login", username)

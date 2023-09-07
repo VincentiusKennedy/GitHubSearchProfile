@@ -65,11 +65,13 @@ class DetailUserViewModel(private val selectedUser: String) : ViewModel() {
                     _userFollower.value = response.body()
                 }
             }
+
             override fun onFailure(call: Call<List<UserItems>>, t: Throwable) {
                 _isLoading.value = false
             }
         })
     }
+
     private val _userFollowing = MutableLiveData<List<UserItems>>()
     val userFollowing: LiveData<List<UserItems>> = _userFollowing
 
@@ -88,6 +90,7 @@ class DetailUserViewModel(private val selectedUser: String) : ViewModel() {
                     _userFollowing.value = response.body()
                 }
             }
+
             override fun onFailure(call: Call<List<UserItems>>, t: Throwable) {
                 _isLoading.value = false
             }
@@ -98,7 +101,7 @@ class DetailUserViewModel(private val selectedUser: String) : ViewModel() {
 class DetailViewModelFactory private constructor(
     private val selectedUser: String
 ) :
-    ViewModelProvider.Factory{
+    ViewModelProvider.Factory {
 
     companion object {
         @Volatile
@@ -115,9 +118,10 @@ class DetailViewModelFactory private constructor(
     @Suppress("UNCHECKED_CAST")
     override fun <T : ViewModel> create(modelClass: Class<T>): T =
         when {
-            modelClass.isAssignableFrom(DetailUserViewModel::class.java)->{
+            modelClass.isAssignableFrom(DetailUserViewModel::class.java) -> {
                 DetailUserViewModel(selectedUser) as T
             }
+
             else -> throw Throwable("Unknown ViewModel class: " + modelClass.name)
         }
 }

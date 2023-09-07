@@ -24,7 +24,7 @@ class FollowFragment : Fragment() {
 
     private var position: Int = 0
     private lateinit var binding: FragmentFollowBinding
-    private lateinit var followViewModel : DetailUserViewModel
+    private lateinit var followViewModel: DetailUserViewModel
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -76,13 +76,13 @@ class FollowFragment : Fragment() {
         arguments?.let {
             position = it.getInt(ARG_POSITION)
             if (position == 1) {
-                if (followViewModel.userFollower.value.isNullOrEmpty()){
+                if (followViewModel.userFollower.value.isNullOrEmpty()) {
                     followViewModel.getFollowerUser()
                 } else {
                     showFollowUser(followViewModel.userFollower.value!!)
                 }
             } else {
-                if (followViewModel.userFollowing.value.isNullOrEmpty()){
+                if (followViewModel.userFollowing.value.isNullOrEmpty()) {
                     followViewModel.getFollowingUser()
                 } else {
                     showFollowUser(followViewModel.userFollowing.value!!)
